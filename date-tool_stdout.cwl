@@ -5,10 +5,10 @@ baseCommand: date
 
 inputs: []
 
-stdout: output.txt
+stdout: output_date.txt
 
 outputs:
   output:
     type: File
     outputBinding:
-      glob: output.txt
+      glob: output_date.txt
