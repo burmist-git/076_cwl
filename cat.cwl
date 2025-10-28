@@ -6,6 +6,7 @@ baseCommand: cat
 inputs:
   input_file:
     type: File
+    default: dummy.txt
     inputBinding:
       position: 1
 

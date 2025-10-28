@@ -8,6 +8,7 @@ function printHelp {
     echo " --ex02       : date-tool.cwl"
     echo " --ex03       : date-tool_stdout.cwl"
     echo " --ex04       : cat.cwl cat.cfg"
+    echo " --ex05       : array.cwl array.cfg"
 }
 
 if [ $# -eq 0 ]; then
@@ -25,6 +26,8 @@ else
 	cwltool date-tool_stdout.cwl
     elif [ "$1" = "--ex04" ]; then
 	cwltool cat.cwl cat.cfg
+    elif [ "$1" = "--ex05" ]; then
+	cwltool array.cwl array.cfg
     else	
         printHelp
     fi
