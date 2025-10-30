@@ -37,6 +37,8 @@ else
 	cwltool wc.cwl --infile output.txt
     elif [ "$1" = "--workflow" ]; then
 	cwltool grep-wc-wf.cwl --grep_output grep_output.txt --infile output.txt --pattern READ
+    elif [ "$1" = "--workflow_cfg" ]; then
+	cwltool grep-wc-wf.cwl --grep_output grep_output.txt --infile output.txt --pattern READ
     else	
         printHelp
     fi
