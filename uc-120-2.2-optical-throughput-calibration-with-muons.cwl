@@ -53,3 +53,10 @@ steps:
       configuration: process_config
       log-level: log-level
     out: [dl1_data]
+  calculate_throughput:
+    run: calibpipe-throughput-muon-tool.cwl
+    in:
+      muon_throughput_tool_input: process_muon_image/dl1_data
+      configuration: throughput_muon_config
+      log-level: log-level
+    out: []
