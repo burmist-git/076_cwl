@@ -4,3 +4,6 @@ output.txt
 dummy.txt
 output_date.txt
 grep_output.txt
+ctapipe-process.provenance.log
+muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst
+muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst.dl1.h5
