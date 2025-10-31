@@ -14,7 +14,7 @@ function printHelp {
     echo " --workflow             : workflow test"
     echo " --ctapipe-process      : ctapipe-process with muons"
     echo " --ctapipe-process_test : ctapipe-process with muons without cwl"
-    echo " --ctapipe-process_test : ctapipe-process with muons without cwl"
+    echo " --uc-120-2.2           : uc-120-2.2 workflow"
 }
 
 if [ $# -eq 0 ]; then
@@ -46,6 +46,8 @@ else
 	cwltool grep-wc-wf.cwl --grep_output grep_output.txt --infile output.txt --pattern READ
     elif [ "$1" = "--ctapipe-process_test" ]; then
         ctapipe-process --overwrite --input=muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst --output=muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst.dl1.h5 --config=ctapipe_process_muon_image.yaml
+    elif [ "$1" = "--uc-120-2.2" ]; then
+	cwltool uc-120-2.2-optical-throughput-calibration-with-muons.cwl uc-120-2.2-optical-throughput-calibration-with-muons.cfg
     else	
         printHelp
     fi
