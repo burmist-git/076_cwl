@@ -20,16 +20,11 @@ inputs:
     label: DL0 file with pre-tagged muon events
     doc: >
         DL0 data/simulation with pre-tagged muon events for optical throughput measurements.
-  process_config_muon_image:
-    type: File
+  process_config:
+    type: File[]
     label: Muon image process
     doc: >
         Configuration file for Muon image process.
-  process_config_muon_fit:
-    type: File
-    label: Muon image fit config
-    doc: >
-        Configuration file for Muon image fit.
   throughput_muon_config:
     type: File
     label: Muon optical throughput calculator config
@@ -54,14 +49,7 @@ steps:
     in:
       process_tool_input: dl0_input_data
       process_tool_output:
-        valueFrom: $(inputs.dl0_input_data.basename.replace(/\..*$/, '.dl1.h5'))
-      configuration: [process_config_muon_image, process_config_muon_fit]
+        valueFrom: $(inputs.process_tool_input.basename.replace(/(?<!\d)\..*$/, '') + '.dl1.h5')
+      configuration: process_config
       log-level: log-level
     out: [dl1_data]
-  process_muon:
-    run: calibpipe-throughput-muon-tool.cwl
-    in:
-      muon_throughput_tool_input: process_muon_image/dl1_data
-      configuration: throughput_muon_config
-      log-level: log-level
-    out: []
