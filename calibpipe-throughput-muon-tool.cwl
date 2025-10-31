@@ -16,7 +16,7 @@ inputs:
   muon_throughput_tool_input:
     type: File
     inputBinding:
-      prefix: --input_url
+      prefix: --input
     label: DL1 with optical throughput for single muon
     doc: >
         Aggregated muon statistics (observation or simulation) for optical throughput estimation.

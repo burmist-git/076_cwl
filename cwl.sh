@@ -14,6 +14,7 @@ function printHelp {
     echo " --workflow             : workflow test"
     echo " --ctapipe-process      : ctapipe-process with muons"
     echo " --ctapipe-process_test : ctapipe-process with muons without cwl"
+    echo " --ctapipe-process_test : ctapipe-process with muons without cwl"
 }
 
 if [ $# -eq 0 ]; then
