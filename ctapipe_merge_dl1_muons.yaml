@@ -1,0 +1,6 @@
+# Merger configuration
+HDF5Merger:
+  dl1_images: True
+  dl1_muon: True
+  monitoring: True
+  single_ob: True

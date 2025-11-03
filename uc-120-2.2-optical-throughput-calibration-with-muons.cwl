@@ -27,6 +27,11 @@ inputs:
     label: Muon image process
     doc: >
         Configuration file for Muon image process.
+  merge_dl1_config:
+    type: File
+    label: Merge DL1 config
+    doc: >
+        Configuration file for merging DL1 images files.
   throughput_muon_config:
     type: File
     label: Muon optical throughput calculator config
@@ -44,6 +49,9 @@ outputs:
     doc: >
         Aggregated muon statistics (observation or simulation) for optical throughput estimation.
     outputSource: process_muon_image/dl1_data
+  dl1_merge_muon_image:
+    type: File?
+    outputSource: merge_muon_image/merged_output
 
 steps:
   process_muon_image:
@@ -57,3 +65,12 @@ steps:
     scatter: process_tool_input
     scatterMethod: "dotproduct"
     out: [dl1_data]
+  merge_muon_image:
+    run: ctapipe-merge-tool.cwl
+    when: $(inputs.input_files.length > 1)
+    in:
+      input_files: process_muon_image/dl1_data
+      configuration: merge_dl1_config
+      output_filename:
+        valueFrom: "muons.merged.dl1.h5"
+    out: [merged_output]
