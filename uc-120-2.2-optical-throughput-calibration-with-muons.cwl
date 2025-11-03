@@ -6,7 +6,9 @@ class: Workflow
 requirements:
   InlineJavascriptRequirement: {}
   StepInputExpressionRequirement: {}
+  ScatterFeatureRequirement: {}
   MultipleInputFeatureRequirement: {}
+
 label: Optical throughput measurements via muon ring analysis
 doc: >
     Upon receiving a new DL0 data product (from either Monte Carlo simulations or observations), DPPS triggers the CalibPipe
@@ -16,7 +18,7 @@ doc: >
 
 inputs:
   dl0_input_data:
-    type: File
+    type: File[]
     label: DL0 file with pre-tagged muon events
     doc: >
         DL0 data/simulation with pre-tagged muon events for optical throughput measurements.
@@ -37,7 +39,7 @@ inputs:
 
 outputs:
   dl1_muon_data:
-    type: File
+    type: File[]
     label: DL1 with optical throughput
     doc: >
         Aggregated muon statistics (observation or simulation) for optical throughput estimation.
@@ -52,11 +54,6 @@ steps:
         valueFrom: $(inputs.process_tool_input.basename.replace(/(?<!\d)\..*$/, '') + '.dl1.h5')
       configuration: process_config
       log-level: log-level
+    scatter: process_tool_input
+    scatterMethod: "dotproduct"
     out: [dl1_data]
-  calculate_throughput:
-    run: calibpipe-throughput-muon-tool.cwl
-    in:
-      muon_throughput_tool_input: process_muon_image/dl1_data
-      configuration: throughput_muon_config
-      log-level: log-level
-    out: []
