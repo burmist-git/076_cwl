@@ -1,7 +1,7 @@
 # Data writing configuration
 DataWriter:
-  write_dl1_images: true # Optional parameter to write muon images to DL1
-  write_dl1_parameters: true # Optional parameter to write parameters to DL1
+  write_dl1_images: False # Optional parameter to write muon images to DL1
+  write_dl1_parameters: False # Optional parameter to write parameters to DL1
   write_muon_parameters: true # Required parameter to write muon parameters to DL1
   write_dl2: false
   transform_image: true
