@@ -74,3 +74,18 @@ steps:
       output_filename:
         valueFrom: "muons.merged.dl1.h5"
     out: [merged_output]
+  calculate_throughput:
+    run: calibpipe-throughput-muon-tool.cwl
+    in:
+      single_muon_throughput_tool_input: process_muon_image/dl1_data
+      merge_muon_throughput_tool_input: merge_muon_image/merged_output
+      muon_throughput_tool_input:
+        valueFrom: >
+          ${
+            return (inputs.single_muon_throughput_tool_input.length > 1)
+              ? inputs.merge_muon_throughput_tool_input
+              : inputs.single_muon_throughput_tool_input[0];
+          }
+      configuration: throughput_muon_config
+      log-level: log-level
+    out: [dl1_data_with_throughput]

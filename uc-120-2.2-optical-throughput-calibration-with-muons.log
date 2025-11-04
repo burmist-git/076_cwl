@@ -1,52 +1,78 @@
 [1;30mINFO[0m /home/burmist/miniconda/envs/mamba/envs/ctapipe-calibpipe/bin/cwltool 3.1.20250925164626
 [1;30mINFO[0m Resolved 'uc-120-2.2-optical-throughput-calibration-with-muons.cwl' to 'file:///home/burmist/home2/training/076_cwl/uc-120-2.2-optical-throughput-calibration-with-muons.cwl'
+[1;30mWARNING[0m [33mWorkflow checker warning:
+
+uc-120-2.2-optical-throughput-calibration-with-muons.cwl:81:7:   Source is from conditional step
+                                                                 and may produce `null`[0m
 [1;30mINFO[0m [workflow ] start
 [1;30mINFO[0m [workflow ] starting step process_muon_image
 [1;30mINFO[0m [step process_muon_image] start
-[1;30mINFO[0m [job process_muon_image] /tmp/hgwndy7c$ ctapipe-process \
+[1;30mINFO[0m [job process_muon_image] /tmp/41inxt8m$ ctapipe-process \
     --config \
-    /tmp/6v3_0kxe/stg5bc01569-c96c-42e3-b56b-de37a8f4e5ee/ctapipe_process_muon_image.yaml \
-    /tmp/6v3_0kxe/stg78cd9fb5-f35b-4dae-b052-58e047e42056/ctapipe_process_muon_fitter.yaml \
+    /tmp/aaa1wap0/stga102c39f-9c85-4c65-b574-ecbe51f2d1c8/ctapipe_process_muon_image.yaml \
+    /tmp/aaa1wap0/stgc932e7fb-a45b-413e-9490-1bb924482131/ctapipe_process_muon_fitter.yaml \
     --log-level \
     INFO \
     --input \
-    /tmp/6v3_0kxe/stgebbced61-e291-4ab1-95cf-19c5bfb808a0/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst \
+    /tmp/aaa1wap0/stg699cced6-7764-4d46-a7f9-3607535dbac9/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst \
     --output \
     muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.dl1.h5
-2025-11-03 18:02:45,582 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.initialize): Loading config from '[PosixPath('/tmp/6v3_0kxe/stg5bc01569-c96c-42e3-b56b-de37a8f4e5ee/ctapipe_process_muon_image.yaml')]'
-2025-11-03 18:02:45,584 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.initialize): ctapipe version 0.27.2.dev15+gc2a30013a
-2025-11-03 18:02:45,585 [1;32mINFO[0m [ctapipe.ctapipe-process.SimTelEventSource] (eventsource.__init__): INPUT PATH = /tmp/6v3_0kxe/stgebbced61-e291-4ab1-95cf-19c5bfb808a0/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst
-2025-11-03 18:02:45,630 [1;33mWARNING[0m [ctapipe.core.telescope_component] (telescope_component.attach_subarray): TelescopeParameter type argument 'MST_*' did not match any known telescope types
-2025-11-03 18:02:45,630 [1;33mWARNING[0m [ctapipe.core.telescope_component] (telescope_component.attach_subarray): TelescopeParameter type argument 'SST_1M_*' did not match any known telescope types
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): applying calibration: True
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): (re)compute DL1: True
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): (re)compute DL2: False
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): compute muon parameters: True
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Subarray : 
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Num Tels : 1
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Footprint: 0.00 km2
-2025-11-03 18:02:45,635 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Height   : 2156.00 m
-2025-11-03 18:02:45,636 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Lon/Lat  : -17.892030200000022 deg, 28.762166100000005 deg 
-2025-11-03 18:02:45,636 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): 
-2025-11-03 18:02:45,637 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info):      Type      Count Tel IDs
-2025-11-03 18:02:45,637 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): -------------- ----- -------
-2025-11-03 18:02:45,637 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): LST_LST_LSTcam     1 1      
+2025-11-04 14:38:38,303 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.initialize): Loading config from '[PosixPath('/tmp/aaa1wap0/stga102c39f-9c85-4c65-b574-ecbe51f2d1c8/ctapipe_process_muon_image.yaml')]'
+2025-11-04 14:38:38,305 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.initialize): ctapipe version 0.27.2.dev15+gc2a30013a
+2025-11-04 14:38:38,306 [1;32mINFO[0m [ctapipe.ctapipe-process.SimTelEventSource] (eventsource.__init__): INPUT PATH = /tmp/aaa1wap0/stg699cced6-7764-4d46-a7f9-3607535dbac9/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.zst
+2025-11-04 14:38:38,351 [1;33mWARNING[0m [ctapipe.core.telescope_component] (telescope_component.attach_subarray): TelescopeParameter type argument 'MST_*' did not match any known telescope types
+2025-11-04 14:38:38,351 [1;33mWARNING[0m [ctapipe.core.telescope_component] (telescope_component.attach_subarray): TelescopeParameter type argument 'SST_1M_*' did not match any known telescope types
+2025-11-04 14:38:38,355 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): applying calibration: True
+2025-11-04 14:38:38,355 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): (re)compute DL1: True
+2025-11-04 14:38:38,355 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): (re)compute DL2: False
+2025-11-04 14:38:38,355 [1;32mINFO[0m [ctapipe.ctapipe-process] (process.start): compute muon parameters: True
+2025-11-04 14:38:38,355 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Subarray : 
+2025-11-04 14:38:38,355 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Num Tels : 1
+2025-11-04 14:38:38,356 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Footprint: 0.00 km2
+2025-11-04 14:38:38,356 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Height   : 2156.00 m
+2025-11-04 14:38:38,356 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): Lon/Lat  : -17.892030200000022 deg, 28.762166100000005 deg 
+2025-11-04 14:38:38,356 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): 
+2025-11-04 14:38:38,357 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info):      Type      Count Tel IDs
+2025-11-04 14:38:38,357 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): -------------- ----- -------
+2025-11-04 14:38:38,357 [1;32mINFO[0m [ctapipe.ctapipe-process] (subarray.info): LST_LST_LSTcam     1 1      
 /home/burmist/miniconda/envs/mamba/envs/ctapipe-calibpipe/lib/python3.11/site-packages/astropy/units/quantity.py:659: RuntimeWarning: invalid value encountered in sqrt
   result = super().__array_ufunc__(function, method, *arrays, **kwargs)
-2025-11-03 18:03:13,040 [1;32mINFO[0m [ctapipe.ctapipe-process.DataWriter] (datawriter.finish): Finishing output
-2025-11-03 18:03:13,330 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.write_provenance): Output: /tmp/hgwndy7c/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.dl1.h5
-2025-11-03 18:03:13,332 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.run): Finished ctapipe-process
-[1;30mINFO[0m [job process_muon_image] Max memory used: 438MiB
+2025-11-04 14:39:05,499 [1;32mINFO[0m [ctapipe.ctapipe-process.DataWriter] (datawriter.finish): Finishing output
+2025-11-04 14:39:05,785 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.write_provenance): Output: /tmp/41inxt8m/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.dl1.h5
+2025-11-04 14:39:05,786 [1;32mINFO[0m [ctapipe.ctapipe-process] (tool.run): Finished ctapipe-process
+[1;30mINFO[0m [job process_muon_image] Max memory used: 425MiB
 [1;30mINFO[0m [job process_muon_image] completed success
 [1;30mINFO[0m [step process_muon_image] completed success
+[1;30mINFO[0m [workflow ] starting step merge_muon_image
+[1;30mINFO[0m [step merge_muon_image] will be skipped
+[1;30mINFO[0m [step merge_muon_image] completed skipped
+[1;30mINFO[0m [workflow ] starting step calculate_throughput
+[1;30mINFO[0m [step calculate_throughput] start
+[1;30mINFO[0m [job calculate_throughput] /tmp/5gnx3b6g$ calibpipe-calculate-throughput-muon \
+    --config \
+    /tmp/yf46v92q/stg05a25738-d6d9-48d9-b1cd-3972175a14f5/throughput_muon_configuration.yaml \
+    --log-level \
+    INFO \
+    --input \
+    /tmp/yf46v92q/stg11ed1ab2-04a3-4c0d-8661-061212f7b22b/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.dl1.h5
+/home/burmist/home2/work/CTA/ctapipe_calibpipe/ctapipe/src/ctapipe/core/traits.py:201: NoneDefaultNotAllowedWarning: Setting default_value=None and allow_none will result in misleading error messages. To require an value, set allow_none=True, default_value=None and check later that the value is not None
+  warnings.warn(msg, NoneDefaultNotAllowedWarning)
+2025-11-04 14:39:07,334 [1;32mINFO[0m [calibpipe.ThroughputCalibration] (tool.initialize): Loading config from '[PosixPath('/tmp/yf46v92q/stg05a25738-d6d9-48d9-b1cd-3972175a14f5/throughput_muon_configuration.yaml')]'
+2025-11-04 14:39:07,335 [1;32mINFO[0m [calibpipe.ThroughputCalibration] (tool.initialize): ctapipe version 0.27.2.dev15+gc2a30013a
+2025-11-04 14:39:07,371 [1;32mINFO[0m [calibpipe.ThroughputCalibration] (tool.write_provenance): Output: 
+2025-11-04 14:39:07,372 [1;32mINFO[0m [calibpipe.ThroughputCalibration] (tool.run): Finished ThroughputCalibration
+[1;30mINFO[0m [job calculate_throughput] Max memory used: 240MiB
+[1;30mINFO[0m [job calculate_throughput] completed success
+[1;30mINFO[0m [step calculate_throughput] completed success
 [1;30mINFO[0m [workflow ] completed success
 {
+    "dl1_merge_muon_image": null,
     "dl1_muon_data": [
         {
             "location": "file:///home/burmist/home2/training/076_cwl/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.dl1.h5",
             "basename": "muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.dl1.h5",
             "class": "File",
-            "checksum": "sha1$d492938da649ee71631766b37779a2431f542f57",
+            "checksum": "sha1$f186608d0d397b6dea097ac2fcc2479ffa164302",
             "size": 6217125,
             "path": "/home/burmist/home2/training/076_cwl/muon_0deg_0deg_run000001___cta-prod6-2156m-LaPalma-lst-dark-ref-degraded-0.83.simtel.dl1.h5"
         }

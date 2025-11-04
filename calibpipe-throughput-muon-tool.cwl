@@ -34,4 +34,9 @@ inputs:
     doc: >
         Log level for the process. Default is INFO.
 
-outputs: []
+outputs:
+  dl1_data_with_throughput:
+    type: File?
+    label: DL1 
+    outputBinding:
+      glob: "*.dl1.h5"
