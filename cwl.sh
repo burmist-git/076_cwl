@@ -49,7 +49,7 @@ else
     elif [ "$1" = "--uc-120-2.2" ]; then
 	#cwltool uc-120-2.2-optical-throughput-calibration-with-muons.cwl uc-120-2.2-optical-throughput-calibration-with-muons.cfg
 	#cwltool uc-120-2.2-optical-throughput-calibration-with-muons.cwl uc-120-2.2-optical-throughput-calibration-with-muons-multi-files.cfg
-	cwltool uc-120-2.2-optical-throughput-calibration-with-muons.cwl uc-120-2.2-optical-throughput-calibration-with-muons.cfg > uc-120-2.2-optical-throughput-calibration-with-muons.log 2>&1
+	#cwltool uc-120-2.2-optical-throughput-calibration-with-muons.cwl uc-120-2.2-optical-throughput-calibration-with-muons.cfg > uc-120-2.2-optical-throughput-calibration-with-muons.log 2>&1
 	cwltool uc-120-2.2-optical-throughput-calibration-with-muons.cwl uc-120-2.2-optical-throughput-calibration-with-muons-multi-files.cfg > uc-120-2.2-optical-throughput-calibration-with-muons-multi-files.log 2>&1
     else	
         printHelp
