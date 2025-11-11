@@ -52,7 +52,7 @@ outputs:
 
 steps:
   process_muon_image:
-    run: ../ctapipe-process-tool.cwl
+    run: ./ctapipe-process-tool.cwl
     in:
       process_tool_input: dl0_input_data
       process_tool_output:
@@ -63,7 +63,7 @@ steps:
     scatterMethod: "dotproduct"
     out: [dl1_data]
   merge_muon_image:
-    run: ../ctapipe-merge-tool.cwl
+    run: ./ctapipe-merge-tool.cwl
     when: $(inputs.input_files.length > 1)
     in:
       input_files: process_muon_image/dl1_data
