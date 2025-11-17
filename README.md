@@ -3,6 +3,7 @@ https://www.commonwl.org/user_guide/
 https://www.commonwl.org/
 https://www.commonwl.org/getting-started/
 https://stepik.org/lesson/44407/step/2?auth=login&unit=22197
+https://view.commonwl.org
 
 conda create --name cwl --no-default-packages
 conda activate cwl
