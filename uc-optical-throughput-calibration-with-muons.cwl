@@ -43,12 +43,12 @@ inputs:
         Log level for the process. Default is INFO.
 
 outputs:
-  dl1_muon_data:
-    type: File[]
+  dl1_muon_throughput_data:
+    type: File
     label: DL1 with optical throughput
     doc: >
         Aggregated muon statistics (observation or simulation) for optical throughput estimation.
-    outputSource: process_muon_image/dl1_data
+    outputSource: calculate_throughput/dl1_data_with_throughput
 
 steps:
   process_muon_image:
